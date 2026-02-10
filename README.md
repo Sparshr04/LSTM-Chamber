@@ -114,11 +114,11 @@ MODEL_CHECKPOINT = ModelCheckpoint(filepath='saved_models/{model}_best.keras', s
 
 ### Visualizations
 
-![Validation Loss Comparison](02_Cost_Function_Comparison.png)
-*Convergence speed comparison across all models*
+![Performance Gap Comparison](plots/performance_gap_comparison.png)
+*Model-2 demonstrated superior efficiency, achieving R² = 0.501 in just 64 epochs, whereas the paper's Model-7 achieved only R² = 0.237 even after 100 epochs (2.1x better performance)*
 
-![Efficiency Gap Analysis](plots/efficiency_gap_analysis.png)
-*Model-2 vs Model-7: Fast convergence vs slow learning*
+![Validation Loss Comparison](plots/02_Cost_Function_Comparison.png)
+*Convergence speed comparison across all 7 models over 100 epochs*
 
 ---
 
