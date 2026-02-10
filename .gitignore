@@ -8,3 +8,58 @@ wheels/
 
 # Virtual environments
 .venv
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+
+# ==============================
+# Project-specific outputs
+# ==============================
+
+# Logs
+*.log
+marathon_logs/
+
+# Experiment outputs
+experiment_results.csv
+results_dashboard.html
+
+# Models & trained artifacts
+models/
+*.h5
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# ==============================
+# OS / Editor junk
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Build / tooling
+# ==============================
+dist/
+build/
+
+# ==============================
+# Temporary / scratch
+# ==============================
+*.tmp
+*.bak
