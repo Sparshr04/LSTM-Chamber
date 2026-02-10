@@ -15,6 +15,23 @@ Our experiments reveal that a **2-Layer LSTM architecture** provides the optimal
 
 ---
 
+## 📊 Interactive Results Dashboard
+
+An interactive HTML dashboard to visualize model performance, efficiency comparisons, and experiment results.
+
+👉 **Live Dashboard:**  
+🔗 https://sparshr04.github.io/LSTM-Chamber/
+
+### Highlights
+- 📈 Visual comparison of LSTM experiment results
+- ⚡ Efficiency & performance metrics
+- 🧠 Model behavior insights through interactive charts
+
+> Note: The dashboard is hosted using GitHub Pages for easy public access.
+
+---
+
+
 ## 📊 Key Results at a Glance
 
 We trained and evaluated **7 distinct model configurations**. The comparison below highlights the efficiency of our optimized approach vs. other architectures.
