@@ -1,25 +1,33 @@
-# LSTM Rainfall Prediction: Comparative Analysis on Pune Weather Data (2008-2022)
+# 🌧️ Deep Learning for Rainfall Forecasting: A Comparative LSTM Study
+### Case Study: Pune Meteorological Data (2008–2022)
 
-## 🌧️ Project Overview
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-This project implements and evaluates **seven LSTM architectures** for rainfall prediction, replicating experiments from recent deep learning research on weather forecasting. Using 14 years of meteorological data from Pune, India, we investigate the relationship between model complexity, learning rates, and predictive performance.
+## 📌 Executive Summary
 
-### 🎯 Key Finding
+This project investigates the efficacy of **Long Short-Term Memory (LSTM)** networks for daily rainfall prediction. Using 14 years of historical weather data from Pune, India, we conducted a rigorous architectural search to determine the optimal model depth and configuration for capturing complex monsoon patterns.
 
-**Model-2 (2 LSTM layers, LR=0.001) achieved the best performance** with an R² score of **0.501** and RMSE of **0.046**, significantly outperforming the paper's recommended Model-7 (1 layer, LR=1e-6, R²=0.237).
+**The Verdict:**
+Our experiments reveal that a **2-Layer LSTM architecture** provides the optimal balance between model capacity and generalization, achieving an **R² score of 0.501**, significantly outperforming both shallower baselines and deeper, complex networks.
 
 ---
 
-## 📊 Abstract
+## 📊 Key Results at a Glance
 
-Deep learning has shown promise in rainfall prediction, but optimal architecture selection remains challenging. This study:
+We trained and evaluated **7 distinct model configurations**. The comparison below highlights the efficiency of our optimized approach vs. other architectures.
 
-- Evaluates **7 LSTM configurations** with varying depths (1-6 layers) and learning rates (0.001 to 1e-6)
-- Analyzes **4,826 days** of meteorological data (temperature, humidity, wind, pressure)
-- Implements **EarlyStopping** and **ModelCheckpoint** for robust training
-- Conducts a **marathon 1000-epoch experiment** to test convergence behavior
+| Rank | Model Architecture | Test R² Score | RMSE | Status |
+|:---:|:---:|:---:|:---:|:---:|
+| 🥇 | **Model-2 (2 Layers)** | **0.501** | **0.046** | **Optimal** |
+| 🥈 | Model-1 (1 Layer, High LR) | 0.469 | 0.047 | Baseline |
+| 🥉 | Model-5 (5 Layers) | 0.457 | 0.047 | Diminishing Returns |
+| ... | ... | ... | ... | ... |
+| 7 | Model-6 (6 Layers) | 0.191 | 0.058 | Overfitting/Degradation |
 
-**Conclusion:** Moderate architectural complexity with standard learning rates outperforms both shallow and very deep networks for this dataset.
+> **📉 Insight:** While deep learning often encourages "going deeper," our results show that for daily weather data, networks deeper than 3 layers suffer from degradation, while single-layer networks struggle to capture complex feature interactions.
 
 ---
 
@@ -174,25 +182,26 @@ scikit-learn>=1.3.0
 plotly>=5.14.0
 ```
 
-### Quick Start
+### ⚡ Fast Installation (using `uv`)
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/rainfall-prediction.git
-cd rainfall-prediction
+This project supports [uv](https://github.com/astral-sh/uv) for extremely fast dependency management.
 
-# Install dependencies
-pip install -r requirements.txt
+1.  **Install uv:**
+    ```bash
+    # macOS/Linux
+    curl -LsSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | sh
 
-# Run full experiment (7 models)
-python full_experiment.py
+    # Windows (PowerShell)
+    powershell -c "irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex"
+    
+    # Or via pip
+    pip install uv
+    ```
 
-# Generate interactive dashboard
-python generate_dashboard.py
-
-# Open results
-open results_dashboard.html
-```
+2.  **Sync dependencies:**
+    ```bash
+    uv sync
+    ```
 
 ### Project Structure
 
@@ -224,28 +233,6 @@ Weather_Analysis/
 
 ---
 
-## 📈 Interactive Dashboard
-
-Open `results_dashboard.html` in your browser for:
-
-- **Training History:** Toggle individual models to compare loss curves
-- **Forecast Visualization:** Interactive actual vs predicted rainfall with hover details
-- **Performance Metrics:** Sortable bar charts for RMSE and R²
-- **Zoomable Plots:** Pan and zoom for detailed analysis
-
----
-
-## 🔮 Future Work
-
-1. **Ensemble Methods:** Combine predictions from top-performing models
-2. **Attention Mechanisms:** Implement LSTM with attention for better temporal focus
-3. **External Features:** Incorporate satellite imagery or climate indices
-4. **Real-Time Deployment:** Create API for live rainfall predictions
-5. **Multi-Region Analysis:** Test generalization across different geographic areas
-6. **Hyperparameter Optimization:** Bayesian optimization for systematic tuning
-
----
-
 ## 📚 References
 
 1. Original Research Paper: [Insert Citation]
@@ -258,24 +245,6 @@ Open `results_dashboard.html` in your browser for:
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+- GitHub: [@Sparshr04](https://github.com/Sparshr04)
+- LinkedIn: [Sparsh R](https://www.linkedin.com/in/sparsh-rannaware-7a7a372ba/)
 
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- India Meteorological Department for open weather data
-- TensorFlow/Keras team for deep learning framework
-- Research community for foundational LSTM work
-
----
-
-**⭐ If you found this project helpful, please consider giving it a star!**
